@@ -1,0 +1,51 @@
+Polarized Secrets: Inside Encryption & the BB84 Protocol 
+
+Introduction 
+
+One of the most significant skills that has propelled the human race to its current position of power is undoubtably the ability to communicate. Being able to share information with those around you and those who may come after you allows civilizations to build a stockpile of knowledge that can help them survive longer and lead more fruitful lives. This power has only increased over time, with the development of technologies that allow us to send messages across the globe with the tap of a finger. However, it is important to note that communication is not always used for the advancements of humans as a whole. Sometimes this power is used when groups of humans are going against one another, and when this is the case, the goal of communication doesn’t stay at the transmission of the message itself but instead transforms into doing so while ensuring secrecy. This simple idea has led to 1000s of years of various encryption methods tasked with keeping messages secret. Whether it was using a Ceaser Cipher to garble plans of attack or using more advanced RSA protocols to secure financial transactions, encryption can often play a role as important as communication itself. This is why scientists and mathematicians have spent a considerable amount of time coming up with ways to make sure our messages stay safe. Unfortunately, due to a rise in quantum computing, some of these methods will soon become unviable. Lucky for us, there are methods (some that are still under development and others that have already been established) that can’t be cracked in the near future. Although it’s unlikely to replace our current encryption protocols, one of these methods, the BB84 protocol, stands out because of its striking simplicity, applications of the relatively new scientific theory of quantum physics, and indication of whether encrypted message was eavesdropped on. 
+
+ 
+
+Encryption 
+
+Before discussing BB84 and other methods of encryption, it is important to first explain what encryption is and what it entails. IBM, a leading company in the technology sector, defines encryption as “the process of transforming readable plain text into unreadable ciphertext to mask sensitive information from unauthorized users” (IBM). However, it can be far more complex than this definition suggests. If making the message unreadable was the only element that mattered, it would be fairly easy to apply a series of convoluted processes to a string of text in order to accomplish that goal. Unfortunately, once you send your garbled message the recipient will not be able to make sense of it. If you tell them directly how to reverse the process, suddenly the encryption becomes pointless as every else is able to decrypt it as well. Encryption involves a delicate balance between making sure that the message is properly scrambling and that it can be easily unscrambled by the intended recipient.  
+
+Over the years, people have dedicated immense resources to the creation of encryption methods that fulfill both of these goals the best they can. This manifests in two main ways: symmetric encryption (where the same key is used by both parties for encryption/decryption) and asymmetric or public encryption (where each party has their own public and private key that can be used to encrypt messages that only the recipient can decrypt) (ITIF). The former method relies on finding a safe way to exchange the key without interception and the latter relies on sophisticated algorithms that ensure secrecy. The most widely used encryption methods today such as RSA (detailed in section III) utilize asymmetric encryption primarily because it avoids having to exchange the key (IBM). This act alone introduces a major vulnerability into symmetric encryption as it gives hackers an easy way to intercept the key. However, many asymmetric methods also come with their own vulnerabilities because algorithms in which they are based are crackable. The only real barrier between the security of these methods is time; however, quantum computing has the potential to exponentially speed up the process of cracking these algorithms which will eventually render them obsolete (ITIF). 
+
+ 
+
+Ceaser Cipher, One-Time Pads, & RSA 
+
+As mentioned above, encryption has been around for thousands of years; consequently, there have been countless methods created (with varying degrees of success) to accomplish the goal of sending messages secretly. The abundance of protocols can make encryption a daunting subject to learn about, so I’ve highlighted a few unique methods (some of which you may have already heard of) that help give a sufficient overview of the topic and play into the rest of the paper.  
+
+The first and probably the most popular is the Ceaser Cipher. It dates back to the  
+
+The next method of discussion, the One-Time Pad encryption (OTP), isn’t actually a method in and of itself, but rather broadly refers to any form of symmetrical encryption that meets certain conditions (Zahabiun). Quantum Key Distribution (QKD) and more specifically BB84 is one of the protocols that meets these conditions which is why discussing the strengths and weaknesses of OTP is crucial for understanding BB84. 
+
+The last method of encryption that will be discussed in this section is the predominant method of encryption in the modern era, Rivest-Shamir-Adleman algorithm (RSA). 
+
+ 
+
+Polarization and Complementarity 
+
+In order to fully understand how the BB84 protocol functions, you need to have some knowledge of some quantum mechanics principles. Broadly, quantum mechanics is defined as the study of 
+
+ 
+
+BB84 
+
+Named after its 2 creators (Bennett and Brassard) and the year of it’s founding (1984), the BB84 protocol is method of QKD that ultilizes the physics of light polarization to share a OTP (Reddy and Mohan). 
+
+ 
+
+Pros & Cons 
+
+Now, what are the strengths and weaknesses of BB84 and how does it compare to other methods of encryption? 
+
+ 
+
+Conclusion 
+
+Ultimately, even though BB84 is unlikely to become the next big method of encryption during the quantum era (), learning about it is still fascinating and can provide  
+
+ 
