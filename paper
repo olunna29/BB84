@@ -18,34 +18,34 @@ Ceaser Cipher, One-Time Pads, & RSA
 
 As mentioned above, encryption has been around for thousands of years; consequently, there have been countless methods created (with varying degrees of success) to accomplish the goal of sending messages secretly. The abundance of protocols can make encryption a daunting subject to learn about, so I’ve highlighted a few unique methods (some of which you may have already heard of) that help give a sufficient overview of the topic and play into the rest of the paper.  
 
-The first and probably the most popular is the Ceaser Cipher. It dates back to the  
+The first and probably the most popular is the Ceaser Cipher. It dates back to the (will finish this by talking generally about how the cipher works, what it was used for, and a quick example)  
 
-The next method of discussion, the One-Time Pad encryption (OTP), isn’t actually a method in and of itself, but rather broadly refers to any form of symmetrical encryption that meets certain conditions (Zahabiun). Quantum Key Distribution (QKD) and more specifically BB84 is one of the protocols that meets these conditions which is why discussing the strengths and weaknesses of OTP is crucial for understanding BB84. 
+The next method of discussion, the One-Time Pad encryption (OTP), isn’t actually a method in and of itself, but rather broadly refers to any form of symmetrical encryption that meets certain conditions (Zahabiun). Quantum Key Distribution (QKD) and more specifically BB84 is one of the protocols that meets these conditions which is why discussing the strengths and weaknesses of OTP is crucial for understanding BB84. (will finish this by talking about the strengths of a one-time pad, using the source about the British cracking Russian codes during WW2 to demonstrate why it's crucial that the key is only used once. Then I'll tie it in to QKD and mention that BB84 is a method of QKD)
 
-The last method of encryption that will be discussed in this section is the predominant method of encryption in the modern era, Rivest-Shamir-Adleman algorithm (RSA). 
+The last method of encryption that will be discussed in this section is the predominant method of encryption in the modern era, Rivest-Shamir-Adleman algorithm (RSA). (I'll talk a little about the history of RSA, how the algorithum works, and finally why quantum computers may soon be able to quickly crack it using the Shor's algorithm)
 
  
 
 Polarization and Complementarity 
 
-In order to fully understand how the BB84 protocol functions, you need to have some knowledge of some quantum mechanics principles. Broadly, quantum mechanics is defined as the study of 
+In order to fully understand how the BB84 protocol functions, you need to have some knowledge of some quantum mechanics principles. Broadly, quantum mechanics is defined as the study of (I'll talk a little about what quantum physics is and its history. Then I'll mention light polarization, then Malus' Law both for light beams and then singular photons. Then I'll talk about Complementarity as it relates to the basis measurements of BB84 specific explaining why the bases have to be exactly 90 degrees apart to make measuring in the wrong basis introduce full uncertainty)
 
  
 
 BB84 
 
-Named after its 2 creators (Bennett and Brassard) and the year of it’s founding (1984), the BB84 protocol is method of QKD that ultilizes the physics of light polarization to share a OTP (Reddy and Mohan). 
+Named after its 2 creators (Bennett and Brassard) and the year of it’s founding (1984), the BB84 protocol is method of QKD that ultilizes the physics of light polarization to share a OTP (Reddy and Mohan). (I'll go over BB84's discovery and then explain step by step how it works)
 
  
 
 Pros & Cons 
 
-Now, what are the strengths and weaknesses of BB84 and how does it compare to other methods of encryption? 
+Now, what are the strengths and weaknesses of BB84 and how does it compare to other methods of encryption? (I'll go over the positives of BB84, including it's resistance to quantum attack and potential for automation but vulerabilities to traditional attacks & loosly mention distance/cost and general inconveniences)
 
  
 
 Conclusion 
 
-Ultimately, even though BB84 is unlikely to become the next big method of encryption during the quantum era (), learning about it is still fascinating and can provide  
+Ultimately, even though BB84 is unlikely to become the next big method of encryption during the quantum era, learning about it is still fascinating and can provide  (overall wrap-up of the paper, its purpose, and bb84)
 
  
