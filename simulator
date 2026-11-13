@@ -1,0 +1,246 @@
+import random
+chosen = False
+simulating = True
+a_digits = []
+a_bases = []
+b_bases = []
+b_digits = []
+match_bases = []
+key_digits = []
+e_bases = []
+b_digits_e = []
+a_bases_short = []
+match_bases_e = []
+
+
+#Introduction sequence
+print("Welcome to the BB84 Simulator!\
+      \n\nThe purpose of this simulator is to show you how the BB84 protocol\
+      \ncan allow you to transfer a one-time key for encryption/decryption\
+      \nwhile alerting you if your key has been compromised.")
+
+choice = input("\n\nIf you'd like some information about how BB84 works type 'info'.\
+               \nIf you'd like to proceed to the simulator type 'sim'.\
+               \nIf you'd like to exit type 'exit'.\n")
+
+#Choosing module
+while chosen == False:
+    if choice.lower() == "sim":
+        print("\n\nYou are now entering the simulator!")
+        chosen = True
+        section = choice.lower()
+        break
+
+    elif choice.lower() == "info":
+        print("\n\nThis section is still under development.")
+        chosen = True
+        section = choice.lower()
+        break
+
+    elif choice.lower() == "exit":
+        print("\n\nHave a nice day!")
+        chosen = True
+        break
+
+    else:
+        choice = input("You must type 'info', 'sim', or 'exit'.\n\n")
+        continue
+
+#Making it so user can choose to continue or exit
+def proceed():
+    decision = input("\nPlease press enter to proceed or type 'exit' to leave.\n\n")
+    if decision.lower() == "exit":
+        return False
+    else:
+        return True
+
+#The simulator
+if section == "sim":
+    while simulating:
+        print("\nImagine 2 friends Alice and Bob trying to send top-secret information but live across the world from each other.\
+            \nThey don't want to use the internet out of fear of getting spied on, so they decide to use the BB84 protocol.\
+            \n\nAlice and Bob have a machine that will allow Alice to send polarized photos to Bob that will register as a 0 or a 1 depending on the direction of polarization.\
+            \nThey hope to use this set up to create a one time key to encrypt and decrypt their secret message.\
+            \n\nFollow them through the protocol to see how they do it!")
+
+        #Checking if they want to exit
+        simulating = proceed()
+        if simulating == False:
+            print("Have a nice day!")
+            break
+
+        print("First Alice creates a random string of 1s and 0s to send to Bob.\
+              \nFor the purpose of the simulator, it'll be 50 digits long.\
+              \nHowever, in the real world it could be thousands of digits to accomodate long messages.")
+
+        #Creates list of random digits
+        for x in range(50):
+            a_digits.append(random.randint(0,1))
+
+        print("\nHer string is: ")
+        print(a_digits)
+
+        #Checking if they want to exit
+        simulating = proceed()
+        if simulating == False:
+            print("Have a nice day!")
+            break  
+
+        print("Before sending the polarized photons, Alice and Bob will need to choose random bases to send/receive the photons in.\
+              \nIt can be in the plus(+) basis, where 0° = 0 and 90° = 1 or in the cross(x) basis, where 45° = 0 and 135° = 1.")
+
+        #Creates list of random basis
+        for x in range(50):
+            digit = random.randint(0,1)
+            if digit == 1:
+                a_bases.append("+")
+            else:
+                a_bases.append("x")
+
+        for x in range(50):
+            digit = random.randint(0,1)
+            if digit == 1:
+                b_bases.append("+")
+            else:
+                b_bases.append("x")
+
+        print("\nAlice's bases are: ")
+        print(a_bases)
+
+        print("\nBob's bases are: ")
+        print(b_bases)
+
+        #Creates list with matched bases & key
+        counter = 0
+        matches = 0
+        for x in a_bases:
+            if x == b_bases[counter]:
+                match_bases.append(x)
+                key_digits.append(a_digits[counter])
+                matches += 1
+            else:
+                match_bases.append("didn't match")
+            counter += 1
+
+        #Checking if they want to exit
+        simulating = proceed()
+        if simulating == False:
+            print("Have a nice day!")
+            break
+
+        print("Now Alice can send the photons to Bob communicating her random string of 1s and 0s in her chosen bases.\
+              \nBob will receive the photons in his chosen bases.")
+
+        #Simulating what Bob received
+        counter = 0
+        for x in match_bases:
+            if x == "didn't match":
+                ran = random.randint(0,1)
+                b_digits.append(ran)
+            else:
+                b_digits.append(a_digits[counter])
+            counter += 1        
+        
+        print(f"Bob received:\
+              \n{b_digits}")
+        
+        print("\n\nHowever, if you compare this with Alice's original list of digits, you may notice that some of the values are different.")
+        print(f"Alice's digits:\
+              \n{a_digits}")
+
+        print("\n\nThis is because we still have a few steps to go.")
+
+        #Checking if they want to exit
+        simulating = proceed()
+        if simulating == False:
+            print("Have a nice day!")
+            break
+
+        print("\n\nNow Alice and Bob will need to share their bases to see if they match.\
+              \nThe corressponding digits of the ones that do will become their one time key.")
+
+        print(f"\n\nHere is a list of of bases that matched:\
+              \n{match_bases}")
+        print(f"\n\n{matches} out of 50 bases matched!")
+        print(f"\n\nThe digits sent when the bases didn't match will be thrown out because there is a 50% chance that Bob won't receive the correct value.\
+              \nThe ones that did will be part of their key for encryption/decrytion:\
+              \n{key_digits}")
+
+        print("\n\nHowever, how do they know if someone eavesdropped?")
+
+        #Checking if they want to exit
+        simulating = proceed()
+        if simulating == False:
+            print("Have a nice day!")
+            break  
+
+        print("\n\nWell, in the same way that Bob choosing a different base than Alice can mess with what he receives, so can the eavesdropper, Eve's, bases.\
+              \nIf Eve wants to measure the photons that Alice is sending, she will also need to choose bases to receive them in.\
+              \nLet's see how this affects what Bob receives.")
+        print("\n\nWe can start by introducing a set of bases for Eve to incercept the photons with:")
+
+        #Creates list of random bases for Eve
+        for x in range(50):
+                    digit = random.randint(0,1)
+                    if digit == 1:
+                        e_bases.append("+")
+                    else:
+                        e_bases.append("x")
+
+        print(e_bases)
+
+        simulating = proceed()
+        if simulating == False:
+            print("Have a nice day!")
+            break
+
+        print("\n\nNow, we'll run Alice's original digits through both Eve's bases and Bob's bases.\
+              \nWe'll only keep the times where Alice's and Bob's bases matched in order to once again create the key.")
+
+        #Creating a list of Alice's bases only when they've matched and Eve's bases
+        counter = 0
+        for x in match_bases:
+            if x != "didn't match":
+                a_bases_short.append(x)
+                if x == e_bases[counter]:
+                    match_bases_e.append(x)
+                else:
+                    match_bases_e.append("N")
+            counter += 1
+
+        #Simulating the key when Eve has intercepted it
+        counter = 0
+        for x in match_bases_e:
+            if x == a_bases_short[counter]:
+                b_digits_e.append(key_digits[counter])
+            else:
+                ran = random.randint(0,1)
+                b_digits_e.append(ran)
+            counter += 1            
+
+        print(f"\n\nThis is what Bob ends up receiving:\
+              \n{b_digits_e}")
+        print(f"\nHowever, this is different from what Alice initally sent:\
+              \n{key_digits}")
+
+        print("\n\nThis happens because when Eve's bases don't match, it introduces a 50/50 where their shouldn't be.")
+
+        simulating = proceed()
+        if simulating == False:
+            print("Have a nice day!")
+            break
+
+        print("\n\nWe can see what went wrong by looking at Eve's bases when Alice and Bob should have matched.\
+              \nThere will be an N in place of where there's a mismatch.")
+        print(f"\nAlice's matched bases: {a_bases_short}\
+              \nEve's bases: {match_bases_e}\
+              \nBob's matched bases: {a_bases_short}")
+
+        print("\nEvery time Eve has a different base, there is a 50% chance that Bob will receive the wrong digit when he should have received the correct one.\
+              \nTherefore, Alice and Bob can find out if there is an eavesdropper by publically exchanging a small portion of the digits of their key.\
+              \nIf any of the digits don't match, they'll know their key was compromised.\
+              \nHowever, if they do, they can throw out the portion they exchanged and use the remaining digits as their key.")
+
+        print("\n\nYou've reached the end of the simulator! Thank you so much for reading!")
+        simulating = False
+        break
